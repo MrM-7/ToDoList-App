@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ToDoList from "./ToDoList";
+import Button from '@mui/material/Button';
 import './index.css';
+import AddIcon from '@mui/icons-material/Add';
 
 const App = ()=>{
 
@@ -12,11 +14,14 @@ const App = ()=>{
   }
 
   const onSubmit = ()=>{
-    setItems((preVal) => {
-      return [...preVal, item];
-    });
-
-    changeItem('');
+    if(item === '')  alert('Add a Item');
+    else{
+      setItems((preVal) => {
+        return [...preVal, item];
+      });
+  
+      changeItem('');
+    }
   }
 
   const deleteItem = (id)=>{
@@ -36,7 +41,20 @@ const App = ()=>{
           <h1>ToDo List</h1>
           <br />
           <input type="text" placeholder="Add a Item" onChange={inputEvent} value={item}/>
-          <button onClick={onSubmit}> + </button>
+          <Button onClick={onSubmit} style={{
+              minHeight: 40,
+              width: 40,
+              borderRadius: 50,
+              borderColor: 'transparent',
+              backgroundColor: '#8566aa',
+              color: 'white',
+              fontSize: 40,
+              border: 'none',
+              outline: 'none',
+              marginLeft: 10,
+              boxShadow: '5 5 15 -5 rgba(0, 0, 0, 0.3)',
+              cursor: 'pointer'
+          }}> <AddIcon style={{fontSize:40}}/> </Button>
 
           <ol>
 

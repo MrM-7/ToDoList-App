@@ -24,6 +24,7 @@
   background-color: #f4f4f4;
   box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  overflow-y: auto;
 }
 
 h1{
@@ -49,7 +50,7 @@ input{
 }
 
 
-button{
+.btn{
   min-height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -65,7 +66,7 @@ button{
 
 }
 
-button:hover{
+.btn:hover{
   background-color: #20bf6b;
 }
 
