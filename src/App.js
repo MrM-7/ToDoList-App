@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 const App = ()=>{
 
-  const[item, changeItem] = useState();
+  const[item, changeItem] = useState('');
   const[Items, setItems]  = useState([]);
   
   const inputEvent = (event)=>{
@@ -59,6 +59,7 @@ const App = ()=>{
           <ol>
 
             {Items.map((list, index)=>{
+              if(list === ''){return null}
               return <ToDoList 
                 key = {index}
                 listItem={list}
